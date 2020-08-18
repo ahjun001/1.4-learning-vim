@@ -1,0 +1,6 @@
+:toc:
+:icons: font
+
+= VIM
+
+== vimrc / .vimrc
