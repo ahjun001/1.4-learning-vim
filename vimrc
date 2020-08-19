@@ -71,7 +71,7 @@ set spelllang=en_us,fr,cjk
 
 
 " Setting spell file to add good words --pjp
-set spellfile=/home/perubu/.local/share/nvim/site/spell/pjp.utf-8.add
+set spellfile=/home/perubu/.vim/site/spell/pjp.utf-8.add
 
 
 " number lines --pjp
@@ -98,10 +98,10 @@ if has('win32')
 	set undodir=$HOME/undo//
 	set viewdir=$HOME/view//
 else
-	set directory=$HOME/.local/share/nvim/swap//
-	set backupdir=$HOME/.local/share/nvim/backup//
-	set undodir=$HOME/.local/share/nvim/undo//
-	set viewdir=$HOME/.local/share/nvim/view//
+	set directory=$HOME/.vim/swap//
+	set backupdir=$HOME/.vim/backup//
+	set undodir=$HOME/.vim/undo//
+	set viewdir=$HOME/.vim/view//
 endif
 
 
@@ -168,7 +168,7 @@ autocmd GUIEnter * simalt ~x
 " Neovim for linux
 " on could put these in .bashrc
 " export VIMCONFIG='~/.config/nvim'
-" export VIMDATA='~/.local/share/nvim'
+" export VIMDATA='~/.vim'
 
 "colorscheme murphy " black background
 "colorscheme delek	" light yellow background, some colors unclear
