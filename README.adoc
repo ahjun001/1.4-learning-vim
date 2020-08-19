@@ -4,3 +4,9 @@
 = VIM
 
 == vimrc / .vimrc
+
+== Managing packages (many plugins in a directory) and plugins
+
+ https://vimhelp.org/repeat.txt.html#packages
+ https://vi.stackexchange.com/questions/9522/what-is-the-vim8-package-feature-and-how-should-i-use-it
+ https://medium.com/@paulodiovani/installing-vim-8-plugins-with-the-native-pack-system-39b71c351fea

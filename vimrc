@@ -170,8 +170,9 @@ autocmd GUIEnter * simalt ~x
 " export VIMCONFIG='~/.config/nvim'
 " export VIMDATA='~/.local/share/nvim'
 
-colorscheme murphy
-"colorscheme delek
+"colorscheme murphy " black background
+"colorscheme delek	" light yellow background, some colors unclear
+colorscheme default
 
 " Setting up for python 3
 " let g:python_host_prog = '/home/perubu/.cache/vim/venv/neovim2/bin/python'
