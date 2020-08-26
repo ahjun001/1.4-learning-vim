@@ -3,7 +3,20 @@
 
 = VIM
 
+ :scriptnames  " to see what files & plugins are loaded at startup
+
+ :new
+ :put=execute('scriptnames')  " will write in the new file
+
+ VSCode will check in Settings (Ctrl+comma)  Vim> Vimrc:Path for vimrc file
+
+
+
 == vimrc / .vimrc
+
+in Linux Mint,  ~/.vim/vimrc contains one line:
+
+ source ~/Documents/GitHub/cheat-sheet_VIM/vimrc 
 
 == Managing packages (many plugins in a directory) and plugins
 

@@ -1,8 +1,6 @@
-" VIM Run Commands: :w
-" source $VIMRUNTIME/vimrc_example.vim
+" in Linux Mint source ~/.vim/vimrc  -> ~/Documents/GitHub/cheat-sheet_VIM/vimrc 
+" also /etc/vim/vimrc.local , if it exists
 " in Windows _vimrc
-" in Ubuntu init.vim
-" in Ubunutu this file 'virmc.local' --, should be in /etc/vim
 
 " Windows MyDiff() {{{1
 set diffexpr=MyDiff()
@@ -37,7 +35,8 @@ function MyDiff()
 	if exists('l:shxq_sav')
 		let &shellxquote=l:shxq_sav
 	endif
-endfunction " }}}
+endfunction
+" }}}
 
 " Setting displayed and saved encoding --pjp
 set encoding=utf-8  " The encoding displayed. Default is =latin1
@@ -78,20 +77,20 @@ set spellfile=/home/perubu/.vim/site/spell/pjp.utf-8.add
 set number
 set relativenumber	" Show line number on the current line and relative numbers on all other lines. Works only if number is enabled.
 augroup toggle_relative_number
-	autocmd InsertEnter * :setlocal norelativenumber
-	autocmd InsertLeave * :setlocal relativenumber
+autocmd InsertEnter * :setlocal norelativenumber
+autocmd InsertLeave * :setlocal relativenumber
 
 
-	" error bells --pjp
-	set errorbells	" Disable beep on errors.
-	set visualbell	" Flash the screen instead of beeping on errors.
+" error bells --pjp
+set errorbells	" Disable beep on errors.
+set visualbell	" Flash the screen instead of beeping on errors.
 
 
-	" set the default directory listing view style --pjp
-	let g:netrw_liststyle = 1
+" set the default directory listing view style --pjp
+let g:netrw_liststyle = 1
 
-	" set swap, backup, undo file directories & tags file --pjp
-	set tags=$VIMRUNTIME/doc/tags
+" set swap, backup, undo file directories & tags file --pjp
+set tags=$VIMRUNTIME/doc/tags
 if has('win32')
 	set directory=$HOME/vimfiles/swap//
 	set backupdir=$HOME/vimfiles/backup//
@@ -144,79 +143,27 @@ if has('win32')
 	command! CdNotes  cd ~/Documents/1./ Perso/Notes/ -/ Synthèses/ -/ Flashcards/
 endif
 
-" Ctrl-P.......
-" set runtimepath=~/.vim/plugin/ctrlp.vim,~/.vim,"C:/Program Files (x86)/Vim/.vim","C:/Program Files (x86)/Vim/vim81","C:/Program Files (x86)/Vim/vim81/pack/dist/opt/matchit","C:/Program Files (x86)/Vim/.vim/after",~/.vim/after  ne fonctionne pas bien
-" set runtimepath^=~/.vim/bundle/synstastic.vim
-
-" Syntastic settings
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-
-" Grammalecte
-" let g:grammalecte_cli_py='C:/users/perubu/appdata/roaming/python/python37/scripts/grammalecte-cli.py'
-" let g:grammalecte_cli_py='C:/Python37/Scripts/grammalecte-cli.py'
-
 " Maximize window at startup under MS Windows --pjp
 autocmd GUIEnter * simalt ~x
 
-" Neovim for linux
-" on could put these in .bashrc
-" export VIMCONFIG='~/.config/nvim'
-" export VIMDATA='~/.vim'
 
-"colorscheme murphy " black background
+"colorscheme murphy " black background --pjp
 "colorscheme delek	" light yellow background, some colors unclear
 colorscheme default
 
 " Setting up for python 3
 " let g:python_host_prog = '/home/perubu/.cache/vim/venv/neovim2/bin/python'
 " let g:python3_host_prog = '/home/perubu/.cache/vim/venv/neovim3/bin/python'
-let g:python_host_prog = '/usr/bin/python2.7'
-let g:python3_host_prog = '/usr/bin/python3.8'
+" let g:python_host_prog = '/usr/bin/python2.7'
+" let g:python3_host_prog = '/usr/bin/python3.8'
 
 " To write files even in RO mode
 cnoremap w!! execute 'silent! write !sudo tee %>/dev/null' <bar> edit!
 
-" Adding a package
+" Adding package matchit to extend the command % to if else endif, or html tags --pjp
 packadd! matchit
 
-" Managing plugins with minpac
-if has('nvim')
-	packadd minpac
-	call minpac#init()
-
-	" Adding, Updating plugins with minpac
-	call minpac#add('k-takata/minpac', {'type': 'opt'})
-	call minpac#add('janko-m/vim-test')
-	call minpac#add('plytophogy/vim-virtualenv', {'type': 'opt'})
-	call minpac#add('tpope/vim-unimpaired', {'type': 'opt'})
-	call minpac#add('tpope/vim-scriptease', {'type': 'opt'})
-	call minpac#add('altercation/vim-colors-solarized', {'type': 'opt'})
-	" Updating plugins
-	" :call minpac#update()
-	" :messages
-	" Deleting plugins
-	"   erase line
-	"   :call minpac#clean()
-endif
-
-" Tweaks to Terminal mode
-if has('nvim')
-	" Switching between Terminal mode and Normal mode
-	tnoremap <Esc> <C-\><C-n>
-	tnoremap <C-v><Esc> <Esc>
-	" Coloring the terminal cursor
-	highlight! link TermCursor Cursor
-	highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
-endif
-
-" Adding xmllint as a map.  In command mode press @@x to lint XML file
+" Adding xmllint as a map.  In command mode press @@x to lint XML file --pjp
 " cnoremap xlt !%xmllint --format --recover -
 cnoremap l!! %!xmllint --format --encode utf-8 --recover -
 
@@ -224,5 +171,8 @@ cnoremap l!! %!xmllint --format --encode utf-8 --recover -
 " When a file has been detected to have been changed outside of Vim and
 " it has not been changed inside of Vim, automatically read it again.
 set ar
+
+" get the mouse connected
+set mouse=a
 
 " vim:fdm=marker:
