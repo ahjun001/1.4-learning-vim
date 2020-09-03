@@ -21,14 +21,17 @@ check last line
 
 == Compilation in Ubuntu
 
+ cd .vim
+ git clone https://github.com/ahjun001-forks/vim.git
+
  cd .vim/vim
  git pull
- make distclean
+ make clean      # remove what make built
+ make distclean  # includes ./configure 
  ./configure --enable-gui=gtk3
  make
  make test
- make install
- make install clean
+ sudo make install
 
 == Useful forgotten commands
 
@@ -59,6 +62,11 @@ check last line
  Normal mode: db, when cursor is as beginning of a word, will delete the precedent word along with the space in between.
 
  Normal mode: ZZ is equivalent to :wq   ZZ also closes the help window without exiting the program
+
+ Moving forward / backward just before a char 'c' on a line: tx / Tx
+ ';' ',' repeats in the same / opposite direction
+
+ Searching for text \< and \> are special markers that match beginning and end of a word
 
 
 == From Quick Reference: see quickref.txt  :help quickref
