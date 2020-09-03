@@ -1,7 +1,127 @@
 :toc:
 :icons: font
 
-= VIM
+== Todo
+
+check: https://github.com/yulonghu/vim-sensible
+
+In what situations use:
+CTRL-T : jump to [count] older entry in the tag stack (default 1).
+CTRL-O
+g-<Right mouse>
+CTRL-<Right mouse>
+CTRL-;  " tapé par inadvertance sur un tag
+
+check last line
+" vim:sts=2:sw=2:et:
+:set softtabstops=2
+:set shiftwidth=2
+:set expandtab
+
+
+== Compilation in Ubuntu
+
+ cd .vim/vim
+ sudo make distclean
+ sudo git pull
+ sudo ./configure --enable-gui=gtk3
+ sudo make
+ sudo make test
+ sudo make install
+ sudo make install clean
+
+== Useful forgotten commands
+
+ :e $MYVIMRC
+
+ Reading help or manual :set nu rnu    is useful
+
+ CTRL-O / CTRL-I  or  :bp / :bn    to go to the previous / next buffer
+
+ u to undo on change, U to undo all the changes on a line
+
+ n next occurence same direction, N next occurence opposite direction, repeat N to keep in this opposite direction
+
+ v motion :w FILENAME   saves the Visually selected lines in file FILENAME 
+
+ r replaces one character, R replaces until <ESC> (Replace mode)
+
+ :set hls  highlights searched char string, :noh temporarilly removes highlight
+
+ :set ic  highlights incremental search
+
+ i_CTRL_T / i_CTRL_I adds / deletes  one shiftwidth of indent in the current line
+
+ :set list / :set nolist turns invisible characters on / off
+
+ command line completion with <TAB> is especially useful for :help
+
+ Normal mode: db, when cursor is as beginning of a word, will delete the precedent word along with the space in between.
+
+ Normal mode: ZZ is equivalent to :wq   ZZ also closes the help window without exiting the program
+
+
+== From Quick Reference: see quickref.txt  :help quickref
+
+
+=== matchit-configure
+
+Configuration is local to the buffer (buffers could be of different languages, so different matching pairs).  So use :let instead of :set
+
+== Get specific help
+
+
+=== Normal mode command
+
+ :help command_name
+ :help x " shows delete one charj
+
+=== Visual mode command
+
+ prepend help with v_
+ :help v_command_name
+ :help v_u   " {Visual}u makes highlighted text lower case
+
+
+
+=== Insert mode command
+
+ prepend help with i_
+ :help i_command_name
+ :help i_<Esc>   " écrire litéralement <Esc> pour sortir de Insert ou Replace mode
+
+=== Command-line command
+
+ prepend help with :
+ :help :command_name
+ :help :quit
+
+=== Command-line editing
+
+ prepend help with c_
+ :help c_command_name  " how to edit in the lower-screen command line
+ :help c_<Del>
+
+=== VIM command argument
+
+ prepend help with -
+ :help -command_name
+ :help -r
+
+=== Options
+
+ prepend with '
+ :help 'option'
+ :help 'textwidth'
+
+=== Regular expression
+ 
+ prepend with /
+ :help /reg_ex
+ :help /[   " shows help on searching for character ranges
+
+
+== VIM
 
  :scriptnames  " to see what files & plugins are loaded at startup
 
