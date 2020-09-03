@@ -22,13 +22,13 @@ check last line
 == Compilation in Ubuntu
 
  cd .vim/vim
- sudo make distclean
- sudo git pull
- sudo ./configure --enable-gui=gtk3
- sudo make
- sudo make test
- sudo make install
- sudo make install clean
+ git pull
+ make distclean
+ ./configure --enable-gui=gtk3
+ make
+ make test
+ make install
+ make install clean
 
 == Useful forgotten commands
 
