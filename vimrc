@@ -1,3 +1,6 @@
+usr_03.txt line 558
+
+c m come became
 " in Linux Mint source ~/.vim/vimrc  -> ~/Documents/GitHub/cheat-sheet_VIM/vimrc 
 " also /etc/vim/vimrc.local , if it exists
 " in Windows _vimrc

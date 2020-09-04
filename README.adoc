@@ -35,39 +35,57 @@ check last line
 
 == Useful forgotten commands
 
- :e $MYVIMRC
+=== Both VIM and mscodevim
 
- Reading help or manual :set nu rnu    is useful
+ u to undo one change, U to undo all the changes on a line
 
- CTRL-O / CTRL-I  or  :bp / :bn    to go to the previous / next buffer
-
- u to undo on change, U to undo all the changes on a line
+ CTR-O / CTRL-I to go to previous / next jump
 
  n next occurence same direction, N next occurence opposite direction, repeat N to keep in this opposite direction
 
- v motion :w FILENAME   saves the Visually selected lines in file FILENAME 
-
  r replaces one character, R replaces until <ESC> (Replace mode)
+
+ i_CTRL_T / i_CTRL_D adds / deletes  one shiftwidth of indent in the current line
+
+ Normal mode: db & dB, when cursor is as beginning of a word, will delete the precedent word along with the space in between.
+
+ Moving forward / backward just before a char 'c' on a line: tx / Tx
+ ';' ',' repeats in the same / opposite direction
+ "for a long text between parentheses", from anywhere in the middle, T" Ctrl-v ,    or    t" Ctrl-v ,    will select the inside of ""
+ When cursor on line, scrolling so that line is 1rst on top is best done with zt
+ Alternatively zz to have text scroll so that it's in the middle, zb to have it at bottom
+ H M L position the cursor on screen without scrolling.
+
+ Alternatively :set nu rnu    and then n CTRL-E[nd] / n CTRL-Y[esterday] will scroll screen by n lines down / up
+
+ * / # will match whole word the cursor is on forward / backward
+ g* / g# will also match words containing the word the cursor is on, g.e.: when on 'the', g* will match then there and so on.
+ 
+=== VIM only
+
+ :e $MYVIMRC
+
+ While reading help or manual :set nu rnu    is useful
+
+ :bp / :bn   or CTRL-O / CTRL-I  to go to the previous / next buffer
+
+ v motion :w FILENAME   saves the Visually selected lines in file FILENAME 
 
  :set hls  highlights searched char string, :noh temporarilly removes highlight
 
  :set ic  highlights incremental search
 
- i_CTRL_T / i_CTRL_I adds / deletes  one shiftwidth of indent in the current line
-
  :set list / :set nolist turns invisible characters on / off
 
  command line completion with <TAB> is especially useful for :help
 
- Normal mode: db, when cursor is as beginning of a word, will delete the precedent word along with the space in between.
-
  Normal mode: ZZ is equivalent to :wq   ZZ also closes the help window without exiting the program
-
- Moving forward / backward just before a char 'c' on a line: tx / Tx
- ';' ',' repeats in the same / opposite direction
 
  Searching for text \< and \> are special markers that match beginning and end of a word
 
+ After listing buffers :ls  close buffer n   with :bdn
+
+ <TABS> or Ctrl-I goes to next jump, Ctrl-O
 
 == From Quick Reference: see quickref.txt  :help quickref
 
