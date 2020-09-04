@@ -51,16 +51,28 @@ check last line
 
  Moving forward / backward just before a char 'c' on a line: tx / Tx
  ';' ',' repeats in the same / opposite direction
+
  "for a long text between parentheses", from anywhere in the middle, T" Ctrl-v ,    or    t" Ctrl-v ,    will select the inside of ""
- When cursor on line, scrolling so that line is 1rst on top is best done with zt
- Alternatively zz to have text scroll so that it's in the middle, zb to have it at bottom
+ Ctrl-v-i "  as well.   Ctrl-v a "  will select the "" as well.
+ 
+ When cursor on line, scrolling so that line shows 1rst on top is best done with zt
+ Alternatively zz to have text scroll so that it shows in the middle, zb to have it at bottom
  H M L position the cursor on screen without scrolling.
 
  Alternatively :set nu rnu    and then n CTRL-E[nd] / n CTRL-Y[esterday] will scroll screen by n lines down / up
 
- * / # will match whole word the cursor is on forward / backward
+ */ # will match whole word the cursor is on forward / backward
  g* / g# will also match words containing the word the cursor is on, g.e.: when on 'the', g* will match then there and so on.
  
+ ma to make a mark, 'a ('<SPACE>a with US-int'l keyboard) to scroll so that cursor is as col.1 of this mark's line.  `a to have it right on the mark.
+
+ X stands for dh (delete character left of the cursor)
+
+ In visual mode, having started in the middle of what should be selected, 'o' brings back the cursor to the other end of the selection for further selection.
+ 'O' moves to the other corner of the same line.
+
+ ~ is an operator if :set top is set in VIM, then works as such for text-objects in codevim
+
 === VIM only
 
  :e $MYVIMRC
@@ -86,6 +98,18 @@ check last line
  After listing buffers :ls  close buffer n   with :bdn
 
  <TABS> or Ctrl-I goes to next jump, Ctrl-O
+
+ Like "dd" or "D" deletes a whole line, "cc" or "S" changes a whole line.  With :set ai    it keeps the existing indent (leading white space) though.
+
+ In replace mode, started with R, Ctrl-y will copy chars from precedent line, <BS> or Ctrl-h will undo the replace, putting back chars from initial text.
+
+== Lists
+
+=== :jumps
+
+
+=== :marks
+
 
 == From Quick Reference: see quickref.txt  :help quickref
 
