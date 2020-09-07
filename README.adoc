@@ -21,10 +21,29 @@ check last line
 
 == Compilation in Ubuntu
 
+
+==== Creating original directory from a fork on Github
+
  cd .vim
  git clone https://github.com/ahjun001-forks/vim.git
+ mv vim src
 
- cd .vim/vim
+
+=== Sync the github forked directory with its original /vim/vim.git
+
+ git remote -v
+    origin	https://github.com/ahjun001-forks/vim.git (fetch)
+    origin	https://github.com/ahjun001-forks/vim.git (push)
+    upstream	https://github.com/ahjun001-forks/vim.git (fetch)
+    upstream	https://github.com/ahjun001-forks/vim.git (push)
+git fetch upstream
+git checkout master
+git merge upstream/master
+(git push)
+
+=== Sync the local repository and compile
+
+ cd .vim/src
  git pull
  make clean      # remove what make built
  make distclean  # includes ./configure 
@@ -73,7 +92,15 @@ check last line
 
  ~ is an operator if :set top is set in VIM, then works as such for text-objects in codevim
 
+ :ju(mps)  will display a jump list, can be navigate with the mouse in codevim
+ :<n>Ctrl-O / <n>Ctrl-I jumps in VIM
+ :cle(arjumps)
+
 === VIM only
+
+ :helpgrep <subject>
+ :cwindow  " to browse results
+ :cnext / cprev to jump to next / previous result
 
  :e $MYVIMRC
 
