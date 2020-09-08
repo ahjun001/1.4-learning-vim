@@ -24,7 +24,7 @@ check last line
 
 ==== Creating original directory from a fork on Github
 
- cd .vim
+ cd ~/.vim
  git clone https://github.com/ahjun001-forks/vim.git
  mv vim src
 
@@ -51,6 +51,10 @@ git merge upstream/master
  make
  make test
  sudo make install
+
+=== Making VIM the default editor on Linux
+
+ sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 100
 
 == Useful forgotten commands
 
