@@ -22,7 +22,7 @@ check last line
 == Compilation in Ubuntu
 
 
-==== Creating original directory from a fork on Github
+=== Creating original directory from a fork on Github
 
  cd ~/.vim
  git clone https://github.com/ahjun001-forks/vim.git
