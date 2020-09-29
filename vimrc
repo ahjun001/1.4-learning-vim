@@ -6,6 +6,7 @@
 source $VIMRUNTIME/vimrc_example.vim
 
 " Windows MyDiff() {{{1
+if has('win32')
 set diffexpr=MyDiff()
 function MyDiff()
 	let opt = '-a --binary '
@@ -39,6 +40,7 @@ function MyDiff()
 		let &shellxquote=l:shxq_sav
 	endif
 endfunction
+endif
 " }}}
 
 " Setting displayed and saved encoding --pjp
