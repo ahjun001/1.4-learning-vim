@@ -52,12 +52,12 @@ Two manuals: (i) A User manual, with task oriented explanations, (ii) A referenc
 
  :e $MYVIMRC to edit the correct vimrc file.
 
-in Linux Mint,  ~/.vim/vimrc contains one line:    source ~/Documents/GitHub/cheat-sheet_VIM/vimrc 
+In Linux Mint,  ~/.vim/vimrc contains one line:    'source ~/Documents/GitHub/cheat-sheet_VIM/vimrc'
 
  :scriptnames  " to see what files & plugins are loaded at startup
 
  :new
- :put=execute('scriptnames')  " will write in the new file
+ :put=execute('scriptnames')  " will write the list in a new file
 
 VSCode will check in Settings (Ctrl+comma)  Vim> Vimrc:Path for vimrc file
 
@@ -67,7 +67,8 @@ VSCode will check in Settings (Ctrl+comma)  Vim> Vimrc:Path for vimrc file
 ==== Getting out
 
 Normal mode: ZZ is equivalent to :wq   when in help, windows ZZ also closes help without exiting the program.
-! If not in the help window, if all buffers are saved, vim will quit !
+
+WARNING: If not in the help window, if all buffers are saved, vim will quit
 
 ==== Finding help
 
@@ -75,7 +76,7 @@ Normal mode: ZZ is equivalent to :wq   when in help, windows ZZ also closes help
   commonly used ones are:
         Normal mode: no prefix
         Visual mode: enter with v, V, or Ctrl-v, prefix: v_    ex.: v_U capitalize, v_u lowercase, v_~ switch
-        Insert mode: enter with a,A, i,I o or O, prefix: i_
+        Insert mode: enter with a,A, i,I o or O, prefix: i_    ex.: :h i_CTRL-[ i_<Esc>
         Options, prefix:'     ex.: :h 'ai   shows set autoindent help
         Regex, prefix: /    :h /$   shows <EOL> help
         Command-line editing: : prepend help with c_
@@ -83,39 +84,36 @@ Normal mode: ZZ is equivalent to :wq   when in help, windows ZZ also closes help
                  :help c_<Del>
         Command argument: prepend help with -
                  :help -command_name
-                 :help -r
+                 :help -r    " list swap files that can be recovered
 
  :helpgrep <subject>
  :cwindow  " to browse results
- :cnext / cprev to jump to next / previous result
+ :cnext / cprev " to jump to next / previous result
 
 command line completion with <TAB> is especially useful for :help
 
-While reading help or manual :set nu rnu    is useful
+ :set nu rnu    is useful while reading help or manual
 
  :h help-summary     is useful
 
 Key combinations.  They usually start with a single letter indicating the mode for which they can be used.
     e.g.:    :help i_CTRL-X
-  takes you to the family of CTRL-X commands for insert mode which can be used to auto-complete different things.  Note, that certain keys will always be written the same, e.g. Control will always be CTRL.
+  takes you to the family of CTRL-X commands for insert mode which can be used to auto-complete different things.  Note, that certain keys will always be written the same, e.g. Control will always be CTRL or ctrl.
 
  For normal mode commands there is no prefix and the topic is available at
- :h CTRL-<Letter>. E.g.  >
-    :help CTRL-W
+    :h CTRL-<Letter>    E.g.  > :help CTRL-W    shows the list of windows sizing & control commands
+
   In contrast >
-    :help c_CTRL-R
-  will describe what the CTRL-R does when entering commands in the Command line and >
-    :help v_CTRL-A
-  talks about incrementing numbers in visual mode and >
-    :help g_CTRL-A
-  talks about the "g<C-A>" command (e.g. you have to press "g" then
+    :help c_CTRL-R      will describe what the CTRL-R does when entering content of registers in commands in the Command line
+
+    :help v_CTRL-A      talks about incrementing numbers in visual mode
+
+    :help g_CTRL-A      talks about the "g<C-A>" command (e.g. you have to press "g" then
  <CTRL-A>).  Here the "g" stands for the normal command "g" which always expects a second key before doing something similar to the commands starting with "z".
 
 
-:h help-summary 11)
-
 === Moving around -- usr_03.txt
-
+here now
 === 
 
 === 
