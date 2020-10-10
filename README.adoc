@@ -32,7 +32,7 @@ IMPORTANT: do not forget
 
 == VIM user manual (as it comes with :h users-manual)
 
-=== About the manuals
+=== About the manuals -- user_01.txt
 
 Reviewing the tutor every once in a while might be a good idea.
 
@@ -42,34 +42,32 @@ Two manuals: (i) A User manual, with task oriented explanations, (ii) A referenc
 
  :bp  /  :bn   (or CTRL-O / CTRL-I when just changed buffers)  to go to the previous / next buffer
 
- <TABS> or Ctrl-I goes to next jump, Ctrl-O
+ <TABS> or Ctrl-I goes to next jump, Ctrl-O    both could be in a different buffer
 
- :ju(mps)  will display a jump list, can be navigate with the mouse in codevim
-    :<n>Ctrl-O / <n>Ctrl-I jumps in VIM
+ :ju(mps)  will display a jump list, can be navigated with the mouse in codevim
+    :<n>Ctrl-O / <n>Ctrl-I jumps <n> times in VIM
     :cle(arjumps)
 
 ==== Run commands
 
  :e $MYVIMRC to edit the correct vimrc file.
 
- in Linux Mint,  ~/.vim/vimrc contains one line:
-
- source ~/Documents/GitHub/cheat-sheet_VIM/vimrc 
+in Linux Mint,  ~/.vim/vimrc contains one line:    source ~/Documents/GitHub/cheat-sheet_VIM/vimrc 
 
  :scriptnames  " to see what files & plugins are loaded at startup
 
  :new
  :put=execute('scriptnames')  " will write in the new file
 
- VSCode will check in Settings (Ctrl+comma)  Vim> Vimrc:Path for vimrc file
+VSCode will check in Settings (Ctrl+comma)  Vim> Vimrc:Path for vimrc file
 
 
-=== The first steps in Vim
+=== The first steps in Vim -- usr_02.txt
 
 ==== Getting out
 
- Normal mode: ZZ is equivalent to :wq   when in help windows ZZ also closes help without exiting the program
- ! If not in the help window
+Normal mode: ZZ is equivalent to :wq   when in help, windows ZZ also closes help without exiting the program.
+! If not in the help window, if all buffers are saved, vim will quit !
 
 ==== Finding help
 
@@ -77,7 +75,7 @@ Two manuals: (i) A User manual, with task oriented explanations, (ii) A referenc
   commonly used ones are:
         Normal mode: no prefix
         Visual mode: enter with v, V, or Ctrl-v, prefix: v_    ex.: v_U capitalize, v_u lowercase, v_~ switch
-        Insert mode: enter with a or i, prefix: i_
+        Insert mode: enter with a,A, i,I o or O, prefix: i_
         Options, prefix:'     ex.: :h 'ai   shows set autoindent help
         Regex, prefix: /    :h /$   shows <EOL> help
         Command-line editing: : prepend help with c_
@@ -91,13 +89,13 @@ Two manuals: (i) A User manual, with task oriented explanations, (ii) A referenc
  :cwindow  " to browse results
  :cnext / cprev to jump to next / previous result
 
- command line completion with <TAB> is especially useful for :help
+command line completion with <TAB> is especially useful for :help
 
- While reading help or manual :set nu rnu    is useful
+While reading help or manual :set nu rnu    is useful
 
  :h help-summary     is useful
 
- Key combinations.  They usually start with a single letter indicating the mode for which they can be used.
+Key combinations.  They usually start with a single letter indicating the mode for which they can be used.
     e.g.:    :help i_CTRL-X
   takes you to the family of CTRL-X commands for insert mode which can be used to auto-complete different things.  Note, that certain keys will always be written the same, e.g. Control will always be CTRL.
 
@@ -116,7 +114,7 @@ Two manuals: (i) A User manual, with task oriented explanations, (ii) A referenc
 
 :h help-summary 11)
 
-=== Moving around
+=== Moving around -- usr_03.txt
 
 === 
 
