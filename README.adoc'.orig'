@@ -88,8 +88,6 @@ WARNING: If not in the help window, if all buffers are saved, vim will quit
 
 TIP: :vert h toc     is often a good way to start help in a 'landscape' screen
 
-TIP: Searching for terms in the toc before trying :helpgrep is a good idea
-
  :helpgrep <subject>
  :cwindow  " to browse results
  :cnext / cprev " to jump to next / previous result
@@ -203,7 +201,7 @@ few common ones:
 
  v motion :w FILENAME   saves the Visually selected lines in file FILENAME 
 
-After listing buffers with  :ls  close buffer n   with :bdn, close all with :%bd
+After listing buffers with  :ls  close buffer n   with :bdn
 
  :reg(isters)    or    :di(splay)  shows registers
 
@@ -246,7 +244,7 @@ The operator either affects whole lines, or the characters between the start and
 
  Ctrl-^ or Ctrl-6 switches between % (current) and # (alternate) files.
 
-==== Both VIM and mscodevim
+=== Both VIM and mscodevim
 
  Moving forward / backward just before a char 'c' on a line: tc / Tc
  ';' ',' repeats in the same / opposite direction
@@ -296,94 +294,14 @@ The operator either affects whole lines, or the characters between the start and
 
 === Editing more than one file usr_07.txt
 
-==== Using registers
 
- "ry   to yank selection into r register
- "rp   to put r register contents 
-
-==== Appending to a file
-
- :w >> logfile    will add buffer to the file
-
-
-=== Splitting windows usr_08.txt
-
- :sp   splits horizontally
- :sp filename    splits horizontally and opens filename in the new window
- :vs filename    vertical split and opens filename in new window
- :vert h topic   vertical split and opens help on topic
-
-==== Moving between windows
-
-        CTRL-W h        move to the window on the left
-        CTRL-W j        move to the window below
-        CTRL-W k        move to the window above
-        CTRL-W l        move to the window on the right
-
-==== Moving windows
-
-        CTRL-W SHIFT-K  moves the window to the top part of the screen, regardless it was vertically split or not
-        CTRL-W H        move window to the far left
-        CTRL-W J        move window to the bottom
-        CTRL-W L        move window to the far right
-
-==== Opening a window for each arguments
-
- $ vim -o *.txt    opens all in vertically split screen
- $ vim -O *.txt    opens all in horizontally split screen
-
-==== Diffing in Vim
-
-Another way to start in diff mode can be done from inside Vim.  Edit the
-"main.c" file, then make a split and show the differences:
-
-        :edit main.c
-        :vertical diffsplit main.c~
-
-The ":vertical" command is used to make the window split vertically.  If you
-omit this, you will get a horizontal split.
-
-==== Jumping to changes
-
- ]c next change
-[c the other way
-
- dp "difff put" removes a difference by putting the text under the cursor of the current window in the other window
- do "difff obtain" removes a difference by putting the change under the cursor from the other window into the current one.
-
-==== Tab pages
-
- :tabe[dit] filename    edit 'filename' in a new tab and switch
-
- :q closes the current tab
-
- :tabN[ext] gt :tabp[revious] gT :tabf[irst] :tabl[ast] :tabnew :tabc[lose]     all perform the eponym action
-
-:tabo[nly]    close all tab pages except the current one
-
- :tab split    makes a new tab page editing current buffer
-
-=== Using the GUI usr_09.txt
-
-==== The clibboard
-
-In X-Windows, highlighting text and middle-clicking in a different window works.  This copy & paste without using the keyboard.
-
-"* register is for the current selection (does not show in Clipit)
-"+ register is for the keyboard (shows in Clipit)
-
-Frequently used commands are in described as accelerators under gVim's Edit menu
-
-=== Making big changes usr_10.txt
 
 == Lists
 
 look at various.txt line 580 for list of commands to use
 
 
-=== Useful commands
 
- :bro[wse] filter /\.adoc/ ol[dfiles]
 
 
 == From Quick Reference: see quickref.txt  :help quickref
@@ -460,13 +378,3 @@ git merge upstream/master
  https://vimhelp.org/repeat.txt.html#packages
  https://vi.stackexchange.com/questions/9522/what-is-the-vim8-package-feature-and-how-should-i-use-it
  https://medium.com/@paulodiovani/installing-vim-8-plugins-with-the-native-pack-system-39b71c351fea
-
-=== Using nvim in VSCode
-
- download nvim.appimage from https://github.com/neovim/neovim/releases
- chmod +x nvim.appimage
- mv nvim.appimage nv
- mv nv /usr/local/bin/
- ln -T ~/.vim/vimrc ~/.config/nvim/init.vim
-
- open nv(im) and check that :echo $MYVIMRC points to the right file
