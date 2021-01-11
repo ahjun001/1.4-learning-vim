@@ -470,3 +470,39 @@ git merge upstream/master
  ln -T ~/.vim/vimrc ~/.config/nvim/init.vim
 
  open nv(im) and check that :echo $MYVIMRC points to the right file
+
+=== compiling a specific version of nvim
+ current installed is NVIM v0.5.0-dev+965-gd0668b36a
+ current installed is NVIM v0.5.0-dev+1012-gfe1ebea33-dirty
+
+ 1rst time:
+ download last Source code (tar.gz) from https://github.com/neovim/neovim/releases into ~/Downloads
+ extract code tree to /tmp
+
+ or
+
+ cd /opt
+ mkdir neovim; sudo chown perubu:perubu neovim
+ sudo git clone https://github.com/neovim/neovim
+
+ subsequent times:
+ 
+ cd neovim
+ git pull (until "Already up to date.")
+ check if dirty
+         git status -u
+         git diff HEAD
+                if dirty:
+                git reset --hard HEAD
+                git checkout
+ 
+ git branch
+ git branch -r
+
+ follow instructions in README.md, install cmake if necessary
+ make CMAKE_BUILD_TYPE=Release
+ check ./build/bin/nvim   :version show release # is correct & clean
+ sudo make install
+ follow instruction regarding dependencies
+ 
+ln -fs ~/Documents/Github/cheat-sheet_vim/vimrc ~/.config/nvim/init.vim

@@ -42,16 +42,8 @@ if !has('nvim')
                         endif
                 endfunction
         endif
-
-
 endif
 " }}}
-
-if !exists('g:vscode')
-        " number lines --pjp
-        set nu rnu
-
-
 
 " Setting displayed and saved encoding --pjp
 set encoding=utf-8  " The encoding displayed. Default is =latin1
@@ -90,6 +82,9 @@ set spellfile=/home/perubu/.vim/site/spell/pjp.utf-8.add
 
 " Setting syntax highlighting for .py .adoc .vim files
 syntax on
+
+" number lines --pjp
+set nu rnu
 
 
 " error bells --pjp
@@ -214,4 +209,3 @@ set top
 
 " set autoindent --pjp
 set ai
-endif
