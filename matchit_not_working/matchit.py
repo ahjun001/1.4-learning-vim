@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-b = True
+a = True
 b = False
 
 # This is a comment
