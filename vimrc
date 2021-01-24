@@ -51,11 +51,16 @@ endif
 
 " Wipe all registers --pjp
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
-" if has('nvim')
-"         command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), "") | endfor
-" else
-"         command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
-" endif
+if has('nvim')
+        colorscheme blue
+        command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), "") | endfor
+else
+        command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
+        "colorscheme murphy " black background --pjp
+        "colorscheme delek      " light yellow background, some colors unclear
+        colorscheme peachpuff   " orange background
+        "colorscheme default
+endif
 
 
 " Wipe oldfiles -- pjp
@@ -170,12 +175,6 @@ if !exists('g:vscode')
 
         " Maximize window at startup under MS Windows --pjp
         "   autocmd GUIEnter * simalt ~x
-
-
-        "colorscheme murphy " black background --pjp
-        "colorscheme delek      " light yellow background, some colors unclear
-        colorscheme peachpuff   " orange background
-        "colorscheme default
 
 
         " Setting up for python 3

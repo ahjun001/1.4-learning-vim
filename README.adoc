@@ -38,7 +38,7 @@ Reviewing the tutor every once in a while might be a good idea.
 
 Two manuals: (i) A User manual, with task oriented explanations, (ii) A reference manual
 
-===== Jumping around
+==== Jumping around
 
  :bp  /  :bn   (or CTRL-O / CTRL-I when just changed buffers)  to go to the previous / next buffer
 
