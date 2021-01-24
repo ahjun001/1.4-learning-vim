@@ -1,6 +1,7 @@
 " in Linux Mint source ~/.vim/vimrc  -> ~/Documents/GitHub/cheat-sheet_VIM/vimrc 
 " also /etc/vim/vimrc.local , if it exists
 " in Windows _vimrc
+" a line from 01.24
 
 " Start from Bram Moolenaar's default settings, get the defaults that most users want. --pjp
 if !has('nvim')
