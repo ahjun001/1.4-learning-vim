@@ -90,7 +90,7 @@ if !exists('g:vscode')
         " Turn off physical line wrapping for .txt files --pjp
         set textwidth=0
         " will be overwriten by file types plugins
-        "   autocmd FileType text setlocal textwidth=0 " works better
+        autocmd FileType text setlocal textwidth=0 " works better
 
 
         " Stop wrapping lines in the middle of a word --pjp
