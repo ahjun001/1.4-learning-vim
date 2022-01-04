@@ -48,6 +48,9 @@ if !has('nvim')
 endif
 " }}}
 
+" Set modeline on so that last line settings are activated
+set modeline
+
 
 " Wipe all registers --pjp
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
