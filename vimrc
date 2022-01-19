@@ -48,9 +48,11 @@ if !has('nvim')
 endif
 " }}}
 
-" Set modeline on so that last line settings are activated
+" Set modeline on so that last line settings are activated --pjp
 set modeline
 
+" Set a meaningful default foldexpr, different from 0
+set foldexpr=getline(v:lnum-2)=~'^\\s*$'&&getline(v:lnum-1)=~'^\\s*$'&&getline(v:lnum)=~'\\S'?'>1':1  
 
 " Wipe all registers --pjp
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
@@ -225,4 +227,4 @@ if !exists('g:vscode')
 
 endif
 
-" vim:tw=0:fdm=marker:
+" vim: tw=0:fdm=marker:
