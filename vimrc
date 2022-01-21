@@ -49,8 +49,8 @@ endif
 " }}}
 
 " Set both tabstops and shiftwidth to 4 --pjp
-set ts = 4
-set sw = 4
+set ts=4
+set sw=4
 
 
 " Set modeline on so that last line settings are activated --pjp
